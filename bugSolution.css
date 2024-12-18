@@ -1,0 +1,22 @@
+/* bug.css (Incorrect): Demonstrates the problem */
+#myElement {
+  width: calc(100% - 20%); /* Incorrect: 20% of what? */
+}
+
+/* bugSolution.css (Correct): Demonstrates the solution */
+#myElement {
+  width: calc(100% - 20px); /* Correct: 20px is clearly defined */
+}
+
+/* Or, if you need percentages: */
+#anotherElement {
+  width: calc(100% - (20% * 500)); /* Correct: Calculates 20% of 500px then subtracts from 100% */
+}
+
+/* Always use parentheses to clarify operations within calc() */
+#parent {
+    width: 500px;
+}
+#anotherElement {
+  width: calc((100% - 20%) / 2); /*Correct usage of Parentheses*/
+}
